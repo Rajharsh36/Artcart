@@ -38,7 +38,7 @@ select:disabled{opacity:0.6}
 .btn.secondary{background:transparent;color:var(--primary);border:1px solid rgba(14,165,164,0.18)}
 
 /* detail panel */
-.detail{position:fixed;right:20px;top:20px;width:420px;max-width:calc(100% - 40px);background:var(--card);border-radius:12px;box-shadow:0 20px 40px rgba(2,6,23,0.2);overflow:hidden;display:none;z-index:30}
+.detail{position:fixed;overflow-y: scroll;right:20px;top:20px;width:420px;max-width:calc(100% - 40px);background:var(--card);border-radius:12px;box-shadow:0 20px 40px rgba(2,6,23,0.2);overflow:hidden;display:none;z-index:30}
 .detail.open{display:block}
 .detail img{width:100%;height:220px;object-fit:cover}
 .detail .content{padding:16px}
@@ -95,6 +95,7 @@ select:disabled{opacity:0.6}
   <div class="content">
     <h2 id="detail-title"></h2>
     <div class="meta" id="detail-location"></div>
+     <div class="meta" id="description"></div>
     <p id="detail-desc"></p>
     <a id="detail-youtube" class="link" target="_blank" rel="noopener noreferrer">Watch: History & process on YouTube →</a>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
@@ -137,6 +138,7 @@ descripton: 'Representng Bihar School of yoga near river Ganga with yogasanasand
     const detailTitle = document.getElementById('detail-title');
     const detailLocation = document.getElementById('detail-location');
     const detailDesc = document.getElementById('detail-desc');
+    const detaildisc = document.getElementById('description');
     const detailYoutube = document.getElementById('detail-youtube');
     const detailPrice = document.getElementById('detail-price');
     const closeDetailBtn = document.getElementById('close-detail');
@@ -198,6 +200,7 @@ descripton: 'Representng Bihar School of yoga near river Ganga with yogasanasand
       detailYoutube.href = p.youtube;
       detailPrice.textContent = '₹' + p.price;
       detailEl.classList.add('open');
+      detaildisc.textcontent = p.description;
       // focus for accessibility
       detailEl.querySelector('.content').focus();
     }
