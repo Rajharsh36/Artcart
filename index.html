@@ -61,7 +61,7 @@ select:disabled{opacity:0.6}
   <div class="container">
     <header>
       <div>
-        <h1>Local Arts Marketplace</h1>
+        <h1 onlick="move()">Local Arts Marketplace</h1>
         <p class="lead">Discover handmade arts from across India.</p>
       </div>
       <div style="text-align:right;font-size:13px;color:var(--muted)">Built for local artisans</div>
@@ -109,6 +109,9 @@ select:disabled{opacity:0.6}
 </div>
 <a id= 'aboutus' href="https://youtube.com/watch?v=W-9qTlEzx6g" >about us!</a>
   </div>  <script>
+    function move(){
+      windows.loaction.href = "https://youtube.com/watch?v=W-9qTlEzx6g";
+    }
     // Sample static product dataset (no backend)
     const PRODUCTS = [
       
